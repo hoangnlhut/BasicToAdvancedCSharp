@@ -1,0 +1,8 @@
+﻿TÓM TẮT:
+- Biểu thức lambda là biểu thức sử dụng toán tử lambda
+- Nếu chỉ có một tham số thì ta có thể bỏ cặp dấu ngoặc tròn ()
+- Expression lambda có kiểu Func
+- Statement lambda có kiểu Action
+
+Lambda cho phép ta truyền các biếu thức cho các hàm, lưu lại trong có biến... giúp viết code mềm dẻo và gọn gàng hơn,
+lambda được dùng nhiều với LINQ hoặc Entity Framework.

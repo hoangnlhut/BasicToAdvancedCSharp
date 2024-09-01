@@ -1,0 +1,31 @@
+﻿Mô phỏng lại bài toán lệnh tìm chuỗi như trong window prompt
+Bài tập: viết lại lệnh find trên Windows: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/find
+
+Các bài toàn xử lý theo các bước sau:
+Mặc định : phân biệt hoa thường
+
+1. Với câu lệnh nhập  vào dùng regex để nhận dạng câu lệnh file phân tách ra các thành phần: 0: file , 1: chuỗi tìm ,2. luật tìm"
+find [/v] [/c] [/n] [/i] [/off[line]] <"string"> [[<drive>:][<path>]<filename>[...]]
+ + 1	Xử lý tìm file trước với định dạng regex [<drive>:][<path>]<filename>
+      Chú ý : cần xử lý bài toán ở filename có thể không rõ tên cụ thể mà là dấu * hoặc là *.txt khi đó phải lấy hết tất cả các file của folder cha ra xử lý
+ + 2	Xử lý chuỗi file đi tìm  "string"
+ + 3	Xử lý trình tự các case tìm với các params sau
+ + 4 các kí tự [] là optional còn <> là bắt buộc , và các params có thể không theo trật tự mà có thể đổi lung tung
+
+2. Các option params cần chú ý
+ + /c /v 	hiển thị số dòng không chứa từ khóa (có phân biệt hoa thường) VD: find /c /v "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+ + /c  hoặc /c và /n	hiển thị SỐ lượng dòng xuất hiện từ khóa VD: find /c /n "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+																	 find /c "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+ + /v	hiển thị các dòng không có từ khóa cần tìm trong file  VD:	find /v "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+ + /n	"hiện thị các dòng có xuất hiện từ khóa với định dạng sau [index của dòng]nội dung dòng VD: [2]hoang"	
+		VD: find /n "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+ + /i	hiện thị tất cả các dòng có từ khóa cần tìm KHÔNG PHÂN BIỆT HOA THƯỜNG   VD: find /i "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+ + không có 4 tham số	trả về danh sách các dòng có từ khóa trong file	find "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+
+
+ 3. Quy tắc hiện thị kết quả  ----------(10 kí tự) tên file chữ hoa:
+
+
+
+
+
