@@ -2,7 +2,7 @@
 {
     public class LastContentWithCandN : IContentFromParams
     {
-        public List<string> GetLastContent(FileToFind file)
+        public List<string> GetLastContent(FindWantedFile file)
         {
             int count = 0;
             foreach (var item in file.ContentOriginal)

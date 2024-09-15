@@ -4,7 +4,7 @@
     {
         //hiện thị các dòng có xuất hiện từ khóa với định dạng sau
         //[index của dòng] nội dung dòng
-        public List<string> GetLastContent(FileToFind file)
+        public List<string> GetLastContent(FindWantedFile file)
         {
             List<string> result = new List<string>() { $"\n---------- {file.PathFile.ToUpper()}" };
 
@@ -12,7 +12,7 @@
             {
                 if (file.ContentOriginal[i].Contains(file.SearchedString))
                 {
-                    string newFormat = $"[{i+1}] {file.ContentOriginal[i]}";
+                    string newFormat = $"[{i+1}]{file.ContentOriginal[i]}";
                     result.Add(newFormat);
                 }
             }

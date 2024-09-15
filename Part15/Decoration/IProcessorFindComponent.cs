@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part15.AbstractionFactory
+namespace Part15.Decoration
 {
-    public interface IContentFromParams
+    public interface IProcessorFindComponent
     {
-        List<string> GetLastContent(FindWantedFile file);
+        IEnumerable<string> Save(List<string> content);
     }
 }

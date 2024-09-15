@@ -3,7 +3,7 @@
     public class LastContentWithI : IContentFromParams
     {
         //hiện thị tất cả các dòng có từ khóa cần tìm KHÔNG PHÂN BIỆT HOA THƯỜNG
-        public List<string> GetLastContent(FileToFind file)
+        public List<string> GetLastContent(FindWantedFile file)
         {
             List<string> result = new List<string>() { $"\n---------- {file.PathFile.ToUpper()}" };
 

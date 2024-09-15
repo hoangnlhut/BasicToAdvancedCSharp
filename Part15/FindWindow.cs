@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Part15.Decoration;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,29 +12,32 @@ namespace Part15
 {
     public class FindWindow
     {
-        public const string pattern = @"^find(\s+(/[vcnio]?))*(\s+""[^""]*"")(\s+([a-zA-Z]:)?(\\[^\\/:*?""<>|\r\n]+)*\\?([\w*]+\.[\w*]+|\*))?(\s+([a-zA-Z]:)?(\\[^\\/:*?""<>|\r\n]+)*\\?([\w*]+\.[\w*]+|\*))*$";
+        public const string pattern = @"^find(\s+(/[vcnio]?|\s*""[^""]*""|\s*([a-zA-Z]:)?(\\[^\\/:*?""<>|\r\n]+)*\\?([\w*]+\.[\w*]+|\*)))+";
         public void Find()
         {
             Console.WriteLine("Find String As Window Command");
             string? input = Console.ReadLine();
             while (!string.IsNullOrEmpty(input))
             {
-                ProduceResult(input);
+                ProduceResult(input, new ConsoleFindComponent());
                 input = Console.ReadLine();
             }
             Console.WriteLine("Display help at the command prompt");
         }
 
 
-        public void ProduceResult(string input)
+        public List<string> ProduceResult(string input, IProcessorFindComponent component)
         {
-            List<FileToFind> files = SplitInputToGetFile(input);
-            foreach (FileToFind file in files)
+            List<string> totalResult = new List<string>();
+
+            List<FindWantedFile> files = SplitInputToGetFile(input, component);
+
+            foreach (FindWantedFile file in files)
             {
-                file.GetContent();
-                file.GetContentWithSearchedTextFilterParams();
-                file.PrintLastResult();
+                totalResult.AddRange(file.Process());
             }
+
+            return totalResult;
         }
 
         /// <summary>
@@ -45,27 +49,47 @@ namespace Part15
         /// <param name="input"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public List<FileToFind> SplitInputToGetFile(string input)
+        public List<FindWantedFile> SplitInputToGetFile(string input, IProcessorFindComponent component)
         {
             Regex regex = new Regex(pattern, RegexOptions.IgnoreCase);
-
             var match = regex.Match(input);
-            var stringSearch = match?.Groups[3]?.Value.Replace("\"", "");
-            var pathFile = match?.Groups[4]?.Value;
-            string paramsS = "";
-            foreach (var item in match?.Groups[2]?.Captures?.ToList())
+            var group = match?.Groups[2].Captures;
+            string stringSearch = string.Empty;
+            string pathFile = string.Empty;
+            string paramsS = string.Empty;
+            foreach (Capture groupItem in group)
             {
-                paramsS += item?.Value.Trim() + " ";
+                if (
+                    groupItem.Value.Contains(Constants.PathFileCharacter.Wildcard)
+                    || groupItem.Value.Contains(Constants.PathFileCharacter.Path)
+                    || groupItem.Value.Contains(Constants.PathFileCharacter.FileText)
+                    )
+                {
+                    pathFile = groupItem.Value;
+                }
+                else if (
+                    groupItem.Value.Contains(Constants.ParamsList.V)
+                    || groupItem.Value.Contains(Constants.ParamsList.C)
+                    || groupItem.Value.Contains(Constants.ParamsList.N)
+                    || groupItem.Value.Contains(Constants.ParamsList.I)
+                    )
+                {
+                    paramsS += groupItem?.Value + " ";
+                }
+                else
+                {
+                    stringSearch = groupItem?.Value?.Replace("\"", "").Trim();
+                }
             }
 
             if (string.IsNullOrEmpty(stringSearch) || string.IsNullOrEmpty(pathFile)) { new ArgumentNullException(); }
 
             List<string> listPathFile = ProcessFilePath(pathFile.Trim());
 
-            List<FileToFind> listFile = new List<FileToFind>();
+            List<FindWantedFile> listFile = new List<FindWantedFile>();
             foreach (var processedPathFile in listPathFile)
             {
-                listFile.Add(new FileToFind() { PathFile = processedPathFile.Trim(), SearchedString = stringSearch.Trim(), ParamsForFind = paramsS.Trim() });
+                listFile.Add(new FindWantedFile(component) { PathFile = processedPathFile.Trim(), SearchedString = stringSearch.Trim(), ParamsForFind = paramsS.Trim() });
             }
 
             return listFile;
@@ -73,7 +97,7 @@ namespace Part15
 
         private List<string> ProcessFilePath(string pathFile)
         {
-            if(pathFile.Contains("*"))
+            if (pathFile.Contains("*"))
             {
                 var dirParentPathName = new DirectoryInfo(pathFile)?.Parent?.FullName;
                 if(string.IsNullOrEmpty(dirParentPathName)) { throw new ArgumentNullException(); }
@@ -81,7 +105,7 @@ namespace Part15
                 var dir = new DirectoryInfo(dirParentPathName);
                 var filesInDirectory = dir.GetFiles();
                 var listFile = new List<string>();
-                foreach (var file in filesInDirectory)
+                foreach (var file in filesInDirectory) 
                 {
                     listFile.Add($"{dir.FullName}\\{file.Name}");
                 }

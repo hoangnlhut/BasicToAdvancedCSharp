@@ -13,15 +13,92 @@ find [/v] [/c] [/n] [/i] [/off[line]] <"string"> [[<drive>:][<path>]<filename>[.
  + 4 các kí tự [] là optional còn <> là bắt buộc , và các params có thể không theo trật tự mà có thể đổi lung tung
 
 2. Các option params cần chú ý
- + /c /v 	hiển thị số dòng không chứa từ khóa (có phân biệt hoa thường) VD: find /c /v "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
- + /c  hoặc /c và /n	hiển thị SỐ lượng dòng xuất hiện từ khóa VD: find /c /n "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
-																	 find /c "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
- + /v	hiển thị các dòng không có từ khóa cần tìm trong file  VD:	find /v "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
- + /n	"hiện thị các dòng có xuất hiện từ khóa với định dạng sau [index của dòng]nội dung dòng VD: [2]hoang"	
-		VD: find /n "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
- + /i	hiện thị tất cả các dòng có từ khóa cần tìm KHÔNG PHÂN BIỆT HOA THƯỜNG   VD: find /i "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
- + không có 4 tham số	trả về danh sách các dòng có từ khóa trong file	find "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+ + /c /v 	hiển thị số dòng không chứa từ khóa (có phân biệt hoa thường) 
+        VD: find /c /v "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+		    find "hoang" /c /v C:\Users\Hoang\Downloads\test\hoang.txt
+			find "hoang" C:\Users\Hoang\Downloads\test\hoang.txt /c /v
+			find C:\Users\Hoang\Downloads\test\hoang.txt "hoang" /c /v
+			find C:\Users\Hoang\Downloads\test\hoang.txt /c /v "hoang"
+			find /c /v C:\Users\Hoang\Downloads\test\hoang.txt "hoang" 
 
+			Kết quả:  ---------- C:\USERS\HOANG\DOWNLOADS\TEST\HOANG.TXT: 8
+
+ *          Tìm trên nhiều file 
+
+ + /c  		hiển thị SỐ lượng dòng xuất hiện từ khóa 
+        VD: find /c "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+		    find "hoang" /c C:\Users\Hoang\Downloads\test\hoang.txt
+			find "hoang" C:\Users\Hoang\Downloads\test\hoang.txt /c
+			find C:\Users\Hoang\Downloads\test\hoang.txt "hoang" /c
+			find C:\Users\Hoang\Downloads\test\hoang.txt /c "hoang"
+			find /c C:\Users\Hoang\Downloads\test\hoang.txt "hoang" 
+
+			Kết quả: ---------- C:\USERS\HOANG\DOWNLOADS\TEST\HOANG.TXT: 2
+
+ + /c và /n	hiển thị SỐ lượng dòng xuất hiện từ khóa
+         VD: find /c /n "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+		    find "hoang" /c /n C:\Users\Hoang\Downloads\test\hoang.txt
+			find "hoang" C:\Users\Hoang\Downloads\test\hoang.txt /c /n
+			find C:\Users\Hoang\Downloads\test\hoang.txt "hoang" /c /n
+			find C:\Users\Hoang\Downloads\test\hoang.txt /c /n "hoang"
+			find /c /n C:\Users\Hoang\Downloads\test\hoang.txt "hoang" 
+
+			Kết Quả: ---------- C:\USERS\HOANG\DOWNLOADS\TEST\HOANG.TXT: 2
+																	 
+ + /v	hiển thị các dòng không có từ khóa cần tìm trong file  
+        VD: find /v "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+		    find "hoang" /v C:\Users\Hoang\Downloads\test\hoang.txt
+			find "hoang" C:\Users\Hoang\Downloads\test\hoang.txt /v
+			find C:\Users\Hoang\Downloads\test\hoang.txt "hoang" /v
+			find C:\Users\Hoang\Downloads\test\hoang.txt /v "hoang"
+			find /v C:\Users\Hoang\Downloads\test\hoang.txt "hoang"
+			
+			Kết Quả: ---------- C:\USERS\HOANG\DOWNLOADS\TEST\HOANG.TXT
+					abc
+					123
+					dfgrth56
+					HOANG
+					HOANG456546
+					HoANg343
+					z
+					"ta la ma"
+
+ + /n	"hiện thị các dòng có xuất hiện từ khóa với định dạng sau [index của dòng]nội dung dòng VD: [2]hoang"	
+         VD: find /n "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+		    find "hoang" /n C:\Users\Hoang\Downloads\test\hoang.txt
+			find "hoang" C:\Users\Hoang\Downloads\test\hoang.txt /n
+			find C:\Users\Hoang\Downloads\test\hoang.txt "hoang" /n
+			find C:\Users\Hoang\Downloads\test\hoang.txt /n "hoang"
+			find /n C:\Users\Hoang\Downloads\test\hoang.txt "hoang" 
+
+			Kết Quả: ---------- C:\USERS\HOANG\DOWNLOADS\TEST\HOANG.TXT
+					[2]hoang
+					[3]hoang345345
+
+
+ + /i	hiện thị tất cả các dòng có từ khóa cần tìm KHÔNG PHÂN BIỆT HOA THƯỜNG
+          VD: find /i "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+		    find "hoang" /i C:\Users\Hoang\Downloads\test\hoang.txt
+			find "hoang" C:\Users\Hoang\Downloads\test\hoang.txt /i
+			find C:\Users\Hoang\Downloads\test\hoang.txt "hoang" /i
+			find C:\Users\Hoang\Downloads\test\hoang.txt /i "hoang"
+			find /i C:\Users\Hoang\Downloads\test\hoang.txt "hoang"
+
+			Kết Quả: ---------- C:\USERS\HOANG\DOWNLOADS\TEST\HOANG.TXT
+					hoang
+					hoang345345
+					HOANG
+					HOANG456546
+					HoANg343
+ 
+ + không có 4 tham số	trả về danh sách các dòng có từ khóa trong file
+           VD: find "hoang" C:\Users\Hoang\Downloads\test\hoang.txt
+		       find C:\Users\Hoang\Downloads\test\hoang.txt "hoang" 
+
+			   Kết Quả: ---------- C:\USERS\HOANG\DOWNLOADS\TEST\HOANG.TXT
+						hoang
+						hoang345345
+ 
 
  3. Quy tắc hiện thị kết quả  ----------(10 kí tự) tên file chữ hoa:
 
