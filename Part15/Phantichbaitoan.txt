@@ -104,5 +104,12 @@ find [/v] [/c] [/n] [/i] [/off[line]] <"string"> [[<drive>:][<path>]<filename>[.
 
 
 
+ KẾT LUẬN:
+ Phân Tích Ưu nhược điểm sau khi viết chương trình khi so sánh với anh Nam
 
-
+ Nhược điểm:
+    + chưa có khả năng mở rộng được: mới chỉ giới hạn ở nhập vào màn hình ==> có thể nhập từ file, từ màn hình từ db....
+	+ chưa bao phủ cây nếu không tìm thấy path thì là tìm kiếm nhập trên màn hình
+	
+Ưu điểm:
+    + mình xử lý qua regex pattern -> mức độ thay đổi trật tự có vẻ hơn anh Nam

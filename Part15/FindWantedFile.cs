@@ -24,7 +24,9 @@ namespace Part15
         private void GetContent()
         {
             //check file existed
-            if(!File.Exists(PathFile))
+
+            // chưa bao phủ cây nếu không tìm thấy path thì là tìm kiếm nhập trên màn hình
+            if (!File.Exists(PathFile))
             {
                 Console.WriteLine($"ERROR: file {PathFile} does not exist");
             }

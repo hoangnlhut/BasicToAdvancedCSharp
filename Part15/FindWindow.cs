@@ -16,10 +16,12 @@ namespace Part15
         public void Find()
         {
             Console.WriteLine("Find String As Window Command");
+            // không mở rộng được: đang fix cứng chỉ từ việc đọc từ màn hình
+            // --> triển khai abstraction / interface: có thể đọc từ nhiều nguồn: đọc từ màn hình, đọc từ file,.....
             string? input = Console.ReadLine();
             while (!string.IsNullOrEmpty(input))
             {
-                ProduceResult(input, new ConsoleFindComponent());
+                ProduceResult(input, new ConsoleFindComponent()); 
                 input = Console.ReadLine();
             }
             Console.WriteLine("Display help at the command prompt");
