@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part15", "Part15\Part15.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part15_UnitTest_FindConsoleApp", "Part15_UnitTest_FindConsoleApp\Part15_UnitTest_FindConsoleApp.csproj", "{FD525C78-D1EA-44D0-9988-962B8F31CD7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part17_ADO.Net", "Part17_ADO.Net\Part17_ADO.Net.csproj", "{D4C6731B-22D9-43F8-B5D0-B0171CF912CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part17_ADO.Net", "Part17_ADO.Net\Part17_ADO.Net.csproj", "{D4C6731B-22D9-43F8-B5D0-B0171CF912CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part19ExportDB", "Part19ExporterDB\ExportDB\Part19ExportDB.csproj", "{7DE9492F-7761-4930-8892-9F1F3B85B8A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{D4C6731B-22D9-43F8-B5D0-B0171CF912CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4C6731B-22D9-43F8-B5D0-B0171CF912CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4C6731B-22D9-43F8-B5D0-B0171CF912CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE9492F-7761-4930-8892-9F1F3B85B8A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE9492F-7761-4930-8892-9F1F3B85B8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE9492F-7761-4930-8892-9F1F3B85B8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE9492F-7761-4930-8892-9F1F3B85B8A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
