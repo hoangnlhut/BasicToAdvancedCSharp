@@ -14,10 +14,13 @@ namespace Part17_ADO.Net
             Console.WriteLine("Data of Region table");
             Region region = new Region(configuration);
             //region.GetLogins();
-            region.Add("hoang");
-            region.Update(1, "Europe new new");
-            region.Delete(12);
-            region.All();
+
+            //region.Add("hoang");
+            //region.Update(1, "Europe new new");
+            //region.Delete(12);
+            //region.All();
+            region.CommitTransaction(8, 11, "viet new", "le hoang viet");
+            region.RollbackTransaction(1007, 10, "viet1", "le hoang viet2222");
         }
     }
 }

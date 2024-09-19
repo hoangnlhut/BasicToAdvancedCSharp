@@ -107,18 +107,59 @@ namespace Part17_ADO.Net
         }
 
         // include update and add and delete row in one transaction
-        public void Transaction(int id, string name)
+        public void CommitTransaction(int idToUpdate, int idToDelete, string name, string newValueName)
         {
-            using SqlConnection sqlConnection = FactoryConnection.CreateConnection(_configuration);
+            Console.WriteLine("Begin Commit Transaction");
 
-            var transaction = sqlConnection.BeginTransaction();
+            using SqlConnection sqlConnection = FactoryConnection.CreateConnection(_configuration);
 
             sqlConnection.Open();
 
-            DeleteInTraction(id, sqlConnection, transaction);
+            var transaction = sqlConnection.BeginTransaction();
+
+            DeleteInTraction(idToDelete, sqlConnection, transaction);
             AddinTransaction(name, sqlConnection, transaction);
+            UpdateInTransaction(idToUpdate, newValueName, sqlConnection, transaction);
+
+            transaction.Commit();
 
             sqlConnection.Close();
+
+            Console.WriteLine("End Commit Transaction");
+        }
+
+        public void RollbackTransaction(int idToUpdate, int idToDelete, string name, string newValueName)
+        {
+            Console.WriteLine("Begin Rollback Transaction");
+
+            using SqlConnection sqlConnection = FactoryConnection.CreateConnection(_configuration);
+
+            sqlConnection.Open();
+
+            var transaction = sqlConnection.BeginTransaction();
+
+            DeleteInTraction(idToDelete, sqlConnection, transaction);
+            AddinTransaction(name, sqlConnection, transaction);
+            UpdateInTransaction(idToUpdate, newValueName, sqlConnection, transaction);
+
+            transaction.Rollback();
+
+            sqlConnection.Close();
+            Console.WriteLine("End Rollback Transaction");
+
+        }
+
+        private static void UpdateInTransaction(int id, string newValueName, SqlConnection sqlConnection, SqlTransaction transaction)
+        {
+            using SqlCommand sqlCommand = new("UPDATE [regions] SET  region_name = @Name WHERE region_id = @Id", sqlConnection, transaction);
+
+            sqlCommand.Parameters.Add(new SqlParameter("Name", System.Data.SqlDbType.NVarChar)).Value = newValueName;
+            sqlCommand.Parameters.Add(new SqlParameter("Id", System.Data.SqlDbType.Int)).Value = id;
+
+            var rowEffect = sqlCommand.ExecuteNonQuery();
+
+            Console.WriteLine($"Total of updated effect records  is {rowEffect}");
+            return ;
         }
 
         private static void AddinTransaction(string name, SqlConnection sqlConnection, SqlTransaction transaction)
