@@ -24,6 +24,11 @@ namespace Part23_MyGenericHost_WorkerService
             //    await Task.Delay(1000, stoppingToken);
             //}
 
+            if (_logger.IsEnabled(LogLevel.Information))
+            {
+                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+            }
+
             _logger.LogInformation("Hello World");
             _logger.LogCritical("Hello World");
             _logger.LogDebug("Hello World");
