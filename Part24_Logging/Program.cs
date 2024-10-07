@@ -45,6 +45,7 @@ namespace Part24_Logging
             }
             #endregion
 
+
             #region message template
             var a = "ABC";
 
