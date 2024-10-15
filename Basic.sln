@@ -45,7 +45,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part25Attributes", "Part25A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part26Configurations", "Part26Configurations\Part26Configurations.csproj", "{BE81F661-1FFE-464C-9BDC-4AD897D91462}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part27DependencyInjection", "Part27DependencyInjection\Part27DependencyInjection.csproj", "{1B931F4A-CA39-4304-890C-F0189D442F5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part27DependencyInjection", "Part27DependencyInjection\Part27DependencyInjection.csproj", "{1B931F4A-CA39-4304-890C-F0189D442F5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part28Caching", "Part28Caching\Part28Caching.csproj", "{D989EAB0-3C05-4E9A-8B24-5D1BE9955293}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{1B931F4A-CA39-4304-890C-F0189D442F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B931F4A-CA39-4304-890C-F0189D442F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B931F4A-CA39-4304-890C-F0189D442F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D989EAB0-3C05-4E9A-8B24-5D1BE9955293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D989EAB0-3C05-4E9A-8B24-5D1BE9955293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D989EAB0-3C05-4E9A-8B24-5D1BE9955293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D989EAB0-3C05-4E9A-8B24-5D1BE9955293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
