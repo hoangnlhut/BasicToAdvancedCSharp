@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Part29_Reflection": {
+      "commandName": "Project",
+      "commandLineArgs": "Compress.exe /Out:<file name> /Help /Priority:RealTime|High|AboveNormal|Normal|BelowNormal|Idle"
+    }
+  }
+}
