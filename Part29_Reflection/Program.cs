@@ -12,7 +12,6 @@ namespace Part29_Reflection
     {
         static void Main(string[] args)
         {
-
             #region Vietnamese source
             //var newVietSource = new ReflectionCSharpViSource();
             //newVietSource.Run();
@@ -36,7 +35,6 @@ namespace Part29_Reflection
             //DisplayInvocation(args);
             #endregion
 
-
             #region Determining Whether a Class or Method Supports Generics
             //Type type;
             //type = typeof(System.Nullable<>);
@@ -49,8 +47,13 @@ namespace Part29_Reflection
             #endregion
 
             #region invoking reflection using dynamic
+            //dynamic data1 = new object();
+            //Console.WriteLine($"This type of dynamic data now is {data1.GetType()}");
+
             //dynamic data = "Hello!  My name is Inigo Montoya";
             //Console.WriteLine(data);
+            //Console.WriteLine($"This type of dynamic data now is {data.GetType()}");
+
             //data = (double)data.Length;
             //data = data * 3.5 + 28.6;
             //if (data == 2.4 + 112 + 26.2)
@@ -59,13 +62,13 @@ namespace Part29_Reflection
             //{
             //    Console.WriteLine(
             //        $"{data} makes for a long triathlon.");
+            //    Console.WriteLine($"This type of dynamic data now is {data.GetType()}");
             //}
             //else
             //{
             //    data.NonExistentMethodCallStillCompiles();
             //}
             #endregion
-
         }
 
 
