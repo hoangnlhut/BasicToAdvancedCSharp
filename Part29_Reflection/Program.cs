@@ -12,6 +12,7 @@ namespace Part29_Reflection
     {
         static void Main(string[] args)
         {
+
             #region Vietnamese source
             //var newVietSource = new ReflectionCSharpViSource();
             //newVietSource.Run();
@@ -31,42 +32,43 @@ namespace Part29_Reflection
             #endregion
 
             #region Display Invocation
-            DisplayInvocation(args);
+            args = new string[] { "/Out:<file name>", "/Help", "/Priority:High" };
+            //DisplayInvocation(args);
             #endregion
-        }
 
-        private static void DisplayInvocation(string[] args)
-        {
-            CommandLineInfo commandLine = new();
-            if (!CommandLineHandler.TryParse(args, commandLine, out string? errorMessage))
-            {
-                Console.WriteLine(errorMessage);
-                DisplayHelp();
-            }
-            else if (commandLine.Help || string.IsNullOrWhiteSpace(commandLine.Out))
-            {
-                DisplayHelp();
-            }
-            else
-            {
-                if (commandLine.Priority !=
-                    ProcessPriorityClass.Normal)
-                {
-                    // Change thread priority
-                }
-                // ...
-            }
-        }
 
-        private static void DisplayHelp()
-        {
-            // Display the command-line help.
-            Console.WriteLine(
-                "Compress.exe /Out:< file name > /Help "
-                + "/Priority:RealTime | High | "
-                + "AboveNormal | Normal | BelowNormal | Idle");
+            #region Determining Whether a Class or Method Supports Generics
+            //Type type;
+            //type = typeof(System.Nullable<>);
+            //Console.WriteLine(type.ContainsGenericParameters);
+            //Console.WriteLine(type.IsGenericType);
+
+            //type = typeof(System.Nullable<DateTime>);
+            //Console.WriteLine(type.ContainsGenericParameters);
+            //Console.WriteLine(type.IsGenericType);
+            #endregion
+
+            #region invoking reflection using dynamic
+            //dynamic data = "Hello!  My name is Inigo Montoya";
+            //Console.WriteLine(data);
+            //data = (double)data.Length;
+            //data = data * 3.5 + 28.6;
+            //if (data == 2.4 + 112 + 26.2)
+            //// The distance (in miles) for the swim, bike, and
+            //// run portions of an Ironman triathlon, respectively
+            //{
+            //    Console.WriteLine(
+            //        $"{data} makes for a long triathlon.");
+            //}
+            //else
+            //{
+            //    data.NonExistentMethodCallStillCompiles();
+            //}
+            #endregion
 
         }
+
+
 
         private static void AccessCustomeAttributes()
         {
