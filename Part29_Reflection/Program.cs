@@ -1,4 +1,5 @@
 ﻿using Part29_CustomBinding;
+using Part29_Reflection.Basics;
 using Part29_Reflection.GeneticType;
 using Part29_Reflection.MemberInvocation;
 using Part29_Reflection.VietnameseSource;
@@ -12,6 +13,105 @@ namespace Part29_Reflection
     {
         static void Main(string[] args)
         {
+            #region Reflection Basics
+
+            #region  Discovering Module Information
+            //// Get the current assembly
+            //Assembly assembly = Assembly.GetExecutingAssembly();
+
+            //// Display the assembly name
+            //Console.WriteLine($"Assembly Name: {assembly.FullName}");
+
+            //// Display the modules name in the assembly
+            //Module[] modules = assembly.GetModules();
+            //foreach (Module module in modules)
+            //{
+            //    Console.WriteLine($"Module Name: {module.Name}");
+            //}
+            #endregion
+
+            #region Understanding Constructors and Methods
+            //Type type = typeof(DemoClass);
+
+            //// Instantiate an object using the constructor
+            //object instance = Activator.CreateInstance(type, new object[] { 42 });
+
+            //// Invoke a method on the object
+            //MethodInfo method = type.GetMethod("DemoMethod");
+            //method.Invoke(instance, new object[] { "Hello, reflection!" });
+            #endregion
+
+            #region Accessing Fields and Properties
+            //DemoClass demoObject = new DemoClass(50);
+            //Type type = demoObject.GetType();
+
+            //// Access and set the value of a field
+            //FieldInfo field = type.GetField("DemoField");
+            //field.SetValue(demoObject, 42);
+
+            //// Access and get the value of a property
+            //PropertyInfo property = type.GetProperty("DemoProperty");
+            //property.SetValue(demoObject, "Hello, reflection!");
+
+            //// Display the values
+            //Console.WriteLine($"Field : {demoObject.DemoField}");
+            //Console.WriteLine($"Property : {property.GetValue(demoObject)}");
+            #endregion
+
+            #region Working with Events
+            //DemoClass demoObject = new DemoClass(65);
+            //Type type = demoObject.GetType();
+
+            //// Attach an event handler dynamically
+            //EventInfo demoEvent = type.GetEvent("DemoEvent");
+            //MethodInfo eventHandler = typeof(Program).GetMethod("DemoEventHandler", BindingFlags.Static | BindingFlags.NonPublic);
+            //Delegate handler = Delegate.CreateDelegate(demoEvent.EventHandlerType, eventHandler);
+            //demoEvent.AddEventHandler(demoObject, handler);
+
+            //// Raise the event
+            //demoObject.RaiseEvent("Hello, reflection!");
+            #endregion
+
+            #region  Understanding Parameters
+            //DemoClass demoObject = new DemoClass(90);
+            //Type type = demoObject.GetType();
+
+            //// Invoke a method with parameters dynamically
+            //MethodInfo[] multiMethod = type.GetMethods();
+            //foreach (var item in multiMethod)
+            //{
+            //    Console.WriteLine(item.Name);
+            //}
+
+            //display demomethod with 2 parameters
+            // MethodInfo? method = type.GetMethod("DemoMethod", new Type[] { typeof(int), typeof(string) });
+
+            // object[] parameters = new object[] { 42, "Hello, reflection!" };
+            // method?.Invoke(demoObject, parameters);
+
+            // //display demomethod with 2 parameters
+            //method = type.GetMethod("DemoMethod", new Type[] { typeof(string) });
+
+            // parameters = new object[] { "aaaaaaaa anh em oi!" };
+            // method?.Invoke(demoObject, parameters);
+            #endregion
+
+            #region Exploring Custom Attributes
+            //Type type = typeof(DemoClass);
+
+            //// Check if the class has a custom attribute
+            //bool hasAttribute = type.IsDefined(typeof(CustomAttribute), inherit: false);
+            //if (hasAttribute)
+            //{
+            //    // Retrieve the custom attribute
+            //    CustomAttribute attribute = (CustomAttribute)type.GetCustomAttribute(typeof(CustomAttribute));
+            //    string description = attribute.Description;
+            //    Console.WriteLine($"Custom Attribute Description: {description}");
+            //}
+            #endregion
+
+            #endregion
+
             #region Vietnamese source
             //var newVietSource = new ReflectionCSharpViSource();
             //newVietSource.Run();
@@ -31,7 +131,7 @@ namespace Part29_Reflection
             #endregion
 
             #region Display Invocation
-            args = new string[] { "/Out:<file name>", "/Help", "/Priority:High" };
+            //args = new string[] { "/Out:<file name>", "/Help", "/Priority:High" };
             //DisplayInvocation(args);
             #endregion
 
@@ -69,9 +169,17 @@ namespace Part29_Reflection
             //    data.NonExistentMethodCallStillCompiles();
             //}
             #endregion
+
+
+
+
         }
 
-
+        private static void DemoEventHandler(object sender, EventArgs e)
+        {
+            DemoEventArgs demoEventArgs = (DemoEventArgs)e;
+            Console.WriteLine($"Event raised with message: {demoEventArgs.Message}");
+        }
 
         private static void AccessCustomeAttributes()
         {
