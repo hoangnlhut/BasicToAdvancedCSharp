@@ -1,10 +1,6 @@
 ﻿using Part29_CustomBinding;
 using Part29_Reflection.Basics;
 using Part29_Reflection.GeneticType;
-using Part29_Reflection.MemberInvocation;
-using Part29_Reflection.NamnetReflection;
-using Part29_Reflection.VietnameseSource;
-using System.Diagnostics;
 using System.Reflection;
 
 namespace Part29_Reflection
@@ -173,15 +169,20 @@ namespace Part29_Reflection
 
 
             #region nam .net
-            var dll = @"E:\LEARNING\SELF_TRAINING_FOLDER\C#Nam.NETFrom0To1\Basic\Part29MyAssembly\bin\Debug\net8.0\Part29MyAssembly.dll";
-            args = new string[] { dll };
-            NamReflection.NamDotNetReflection(args);
+            //var dll = @"E:\LEARNING\SELF_TRAINING_FOLDER\C#Nam.NETFrom0To1\Basic\Part29MyAssembly\bin\Debug\net8.0\Part29MyAssembly.dll";
+            //args = new string[] { dll };
+            //NamReflection.NamDotNetReflection(args);
             #endregion
 
-
+            #region Call Network Monitor app
+            var dll = @"E:\LEARNING\SELF_TRAINING_FOLDER\C#Nam.NETFrom0To1\Basic\Part29_NetworkMonitorAppUsingReflection\bin\Debug\net8.0\Part29_NetworkMonitorAppUsingReflection.dll";
+            Console.WriteLine("Network get problem...........");
+            NetworkMonitor.NetworkMonitor.BootstrapFromConfiguration(dll);
+            NetworkMonitor.NetworkMonitor.Warning();
+            #endregion
         }
 
-        
+
 
         private static void DemoEventHandler(object sender, EventArgs e)
         {
