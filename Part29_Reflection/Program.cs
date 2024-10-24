@@ -1,6 +1,8 @@
 ﻿using Part29_CustomBinding;
 using Part29_Reflection.Basics;
 using Part29_Reflection.GeneticType;
+using Part29_Reflection.Pluralsight;
+using Part29_Reflection.Pluralsight.IoCContainer;
 using System.Reflection;
 
 namespace Part29_Reflection
@@ -119,10 +121,6 @@ namespace Part29_Reflection
             //CustomBinder();
             #endregion
 
-            #region Examine and instantiate generic types with reflection
-            //GenericTypeWithReflection();
-            #endregion
-
             #region Access Custom Attributes
             //AccessCustomeAttributes();
             #endregion
@@ -130,17 +128,6 @@ namespace Part29_Reflection
             #region Display Invocation
             //args = new string[] { "/Out:<file name>", "/Help", "/Priority:High" };
             //DisplayInvocation(args);
-            #endregion
-
-            #region Determining Whether a Class or Method Supports Generics
-            //Type type;
-            //type = typeof(System.Nullable<>);
-            //Console.WriteLine(type.ContainsGenericParameters);
-            //Console.WriteLine(type.IsGenericType);
-
-            //type = typeof(System.Nullable<DateTime>);
-            //Console.WriteLine(type.ContainsGenericParameters);
-            //Console.WriteLine(type.IsGenericType);
             #endregion
 
             #region invoking reflection using dynamic
@@ -167,7 +154,6 @@ namespace Part29_Reflection
             //}
             #endregion
 
-
             #region nam .net
             //var dll = @"E:\LEARNING\SELF_TRAINING_FOLDER\C#Nam.NETFrom0To1\Basic\Part29MyAssembly\bin\Debug\net8.0\Part29MyAssembly.dll";
             //args = new string[] { dll };
@@ -175,10 +161,95 @@ namespace Part29_Reflection
             #endregion
 
             #region Call Network Monitor app
-            var dll = @"E:\LEARNING\SELF_TRAINING_FOLDER\C#Nam.NETFrom0To1\Basic\Part29_NetworkMonitorAppUsingReflection\bin\Debug\net8.0\Part29_NetworkMonitorAppUsingReflection.dll";
-            Console.WriteLine("Network get problem...........");
-            NetworkMonitor.NetworkMonitor.BootstrapFromConfiguration(dll);
-            NetworkMonitor.NetworkMonitor.Warning();
+            //var dll = @"E:\LEARNING\SELF_TRAINING_FOLDER\C#Nam.NETFrom0To1\Basic\Part29_NetworkMonitorAppUsingReflection\bin\Debug\net8.0\Part29_NetworkMonitorAppUsingReflection.dll";
+            //Console.WriteLine("Network get problem...........");
+            //NetworkMonitor.NetworkMonitor.BootstrapFromConfiguration(dll);
+            //NetworkMonitor.NetworkMonitor.Warning();
+            #endregion
+
+
+            #region Determining Whether a Class or Method Supports Generics
+            //Type type;
+            //type = typeof(System.Nullable<>);
+            //Console.WriteLine(type.ContainsGenericParameters);
+            //Console.WriteLine(type.IsGenericType);
+
+            //type = typeof(System.Nullable<DateTime>);
+            //Console.WriteLine(type.ContainsGenericParameters);
+            //Console.WriteLine(type.IsGenericType);
+
+            //#region Using Reflection with generics in pluralsigh course
+
+            //var myList = new List<DemoClass>();
+            //Console.WriteLine(myList.GetType());
+
+            //var myDictionary = new Dictionary<string, int>();
+            //Console.WriteLine(myDictionary.GetType());
+
+            //var dictionaryType = myDictionary.GetType();
+            //foreach (var genericTypeArgrument in dictionaryType.GenericTypeArguments)
+            //{
+            //    Console.WriteLine(genericTypeArgrument);
+            //}
+
+            //foreach (var genericArgrument in dictionaryType.GetGenericArguments())
+            //{
+            //    Console.WriteLine(genericArgrument);
+            //}
+
+            //var openDictionaryType = typeof(Dictionary<,>);
+            //foreach (var genericTypeArgrument in openDictionaryType.GenericTypeArguments)
+            //{
+            //    // no call this here
+            //    Console.WriteLine(genericTypeArgrument);
+            //}
+
+            //foreach (var genericArgrument in openDictionaryType.GetGenericArguments())
+            //{
+            //    Console.WriteLine(genericArgrument);
+            //}
+
+            //var createdInstance = Activator.CreateInstance(typeof(List<DemoClass>));
+            //Console.WriteLine(createdInstance.GetType());
+
+            //var openResultType = typeof(Result<>);
+            //Console.WriteLine(openResultType);
+
+            ////solution 1
+            //var closedResultType = openResultType.MakeGenericType(typeof(DemoClass));
+            //Console.WriteLine("Solution 1: " + closedResultType);
+            //var creatInstance1 = Activator.CreateInstance(closedResultType);
+            //Console.WriteLine("Intance 1: " + creatInstance1);
+
+            //// solution 2
+            //var solution2 = typeof(Result<DemoClass>);
+            //Console.WriteLine("Solution 2: " + solution2);
+            //var creatInstance2 = Activator.CreateInstance(solution2);
+            //Console.WriteLine("Intance 2: " + creatInstance2);
+
+
+            //var createdResult 
+
+            #endregion
+
+            #region Examine and instantiate generic types with reflection
+            //GenericTypeWithReflection();
+            #endregion
+
+            #region IoCContainer Example
+
+            var iocContainer = new IoCContainer();
+            iocContainer.Register<IWaterService, TapWaterService>();
+            //var waterService = iocContainer.Resolve<IWaterService>();
+            //Console.WriteLine(waterService);
+
+            // error unbound generic
+            //iocContainer.Register<IBeanService<>, ArabicaBeanService<>>();
+            iocContainer.Register(typeof(IBeanService<>), typeof( ArabicaBeanService<>));
+
+            iocContainer.Register<ICoffeeService, CoffeeService>();
+            var coffeeService = iocContainer.Resolve<ICoffeeService>();
+            Console.WriteLine(coffeeService);
             #endregion
         }
 
