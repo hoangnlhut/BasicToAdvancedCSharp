@@ -1,9 +1,11 @@
-﻿using System.Security.Principal;
+﻿using Part30Thread.SynchronizationThreads;
+using System.Security.Principal;
 
 namespace Part30Thread
 {
     internal partial class Program
     {
+        
         static void Main(string[] args)
         {
 
@@ -45,23 +47,32 @@ namespace Part30Thread
             #endregion
 
             #region Tái sử dụng qua một hàm
-            CancellationTokenSource cts = new CancellationTokenSource();
+            //CancellationTokenSource cts = new CancellationTokenSource();
 
-            var t1 = new Thread(new ParameterizedThreadStart(Print));
-            var t2 = new Thread(new ParameterizedThreadStart(Print));
-            var t3 = new Thread(new ParameterizedThreadStart(Print));
+            //var t1 = new Thread(new ParameterizedThreadStart(Print));
+            //var t2 = new Thread(new ParameterizedThreadStart(Print));
+            //var t3 = new Thread(new ParameterizedThreadStart(Print));
 
-            // hoặc có thể tạo lớp model để định nghĩa params
-            //t1.Start( new { Name = "hoang", Address = "1"});
-            //t2.Start(new { Name = "trang", Address = "2" });
-            //t3.Start(new { Name = "viet", Address = "3" }); 
-            t1.Start( new ThreadInputModel  { Name = "hoang", Address = "1", Cts = cts.Token});
-            t2.Start(new ThreadInputModel { Name = "trang", Address = "2", Cts = cts.Token });
-            t3.Start(null);
+            //// hoặc có thể tạo lớp model để định nghĩa params
+            ////t1.Start( new { Name = "hoang", Address = "1"});
+            ////t2.Start(new { Name = "trang", Address = "2" });
+            ////t3.Start(new { Name = "viet", Address = "3" }); 
+            //t1.Start( new ThreadInputModel  { Name = "hoang", Address = "1", Cts = cts.Token});
+            //t2.Start(new ThreadInputModel { Name = "trang", Address = "2", Cts = cts.Token });
+            //t3.Start(null);
 
-            Console.ReadLine();
-            //cts.Cancel(); // cancel ngay sau lệnh nhập
-            cts.CancelAfter(10000); // cancel sau 10 giây sau lệnh nhập
+            //Console.ReadLine();
+            ////cts.Cancel(); // cancel ngay sau lệnh nhập
+            //cts.CancelAfter(10000); // cancel sau 10 giây sau lệnh nhập
+            #endregion
+
+            #region Đồng bộ dũ liệu giữa các thread
+
+            #region using EventWaitHandle
+            EventWaitHandleDemo.Run();
+            #endregion
+
+
             #endregion
 
         }
