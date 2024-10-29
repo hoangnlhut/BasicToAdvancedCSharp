@@ -57,7 +57,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part29MyAssembly", "Part29M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part29_NetworkMonitorAppUsingReflection", "Part29_NetworkMonitorAppUsingReflection\Part29_NetworkMonitorAppUsingReflection.csproj", "{0E068E0C-1274-4BE4-8EDD-49A027491612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part30Thread", "Part30Thread\Part30Thread.csproj", "{89B5CF49-FAB4-412E-9087-4F320BDB7F02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part30Thread", "Part30Thread\Part30Thread.csproj", "{89B5CF49-FAB4-412E-9087-4F320BDB7F02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part32Semaphore", "Part32Semaphore\Part32Semaphore.csproj", "{7DD61ACE-6B05-4A76-9627-C56024FCC81D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -177,6 +179,10 @@ Global
 		{89B5CF49-FAB4-412E-9087-4F320BDB7F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89B5CF49-FAB4-412E-9087-4F320BDB7F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89B5CF49-FAB4-412E-9087-4F320BDB7F02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DD61ACE-6B05-4A76-9627-C56024FCC81D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DD61ACE-6B05-4A76-9627-C56024FCC81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DD61ACE-6B05-4A76-9627-C56024FCC81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DD61ACE-6B05-4A76-9627-C56024FCC81D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
