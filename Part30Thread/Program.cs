@@ -1,4 +1,8 @@
-﻿using Part30Thread.SynchronizationThreads;
+﻿using Part30Thread.CancelThread.ListenMultipleCancellationRequest;
+using Part30Thread.DebuggingThread;
+using Part30Thread.PrioritizationScheduleThread;
+using Part30Thread.SynchronizationThreads;
+using System.Drawing;
 using System.Security.Principal;
 
 namespace Part30Thread
@@ -13,14 +17,14 @@ namespace Part30Thread
             ////cách 2: sử dụng biến để check
             //bool isFinished = false;
 
-            //Thread t1 = new Thread(() =>
-            //{
-            //    while (!isFinished)
-            //    {
-            //        Console.WriteLine("Hello 1111!");
-            //        Thread.Sleep(1000);
-            //    }
-            //});
+            Thread t1 = new Thread(() =>
+            {
+                while (!isFinished)
+                {
+                    Console.WriteLine("Hello 1111!");
+                    Thread.Sleep(1000);
+                }
+            });
 
             //Thread t2 = new Thread(() =>
             //{
@@ -64,17 +68,90 @@ namespace Part30Thread
             //Console.ReadLine();
             ////cts.Cancel(); // cancel ngay sau lệnh nhập
             //cts.CancelAfter(10000); // cancel sau 10 giây sau lệnh nhập
+            // Call Dispose when we're done with the CancellationTokenSource.
+            //cts.Dispose();
             #endregion
 
             #region Đồng bộ dũ liệu giữa các thread
-
             #region using EventWaitHandle
-            EventWaitHandleDemo.Run();
+            //EventWaitHandleDemo.Run();
+            #endregion
             #endregion
 
+            #region Scheduling threads with prioritization
+            //SchedulingThreads sche = new SchedulingThreads();
+            //sche.RunMultipleThreadsOnDifferentPriorities();
+            #endregion
+
+            #region Cancel Thread
+            #region Listen for Cancellation Requests by Polling
+            //var tokenSource = new CancellationTokenSource();
+            //// Toy object for demo purposes
+            //Rectangle rect = new Rectangle() { columns = 1000, rows = 500 };
+
+            //// Simple cancellation scenario #1. Calling thread does not wait
+            //// on the task to complete, and the user delegate simply returns
+            //// on cancellation request without throwing.
+            //Task.Run(() => NestedLoops(rect, tokenSource.Token), tokenSource.Token);
+
+            //// Simple cancellation scenario #2. Calling thread does not wait
+            //// on the task to complete, and the user delegate throws
+            //// OperationCanceledException to shut down task and transition its state.
+            //// Task.Run(() => PollByTimeSpan(tokenSource.Token), tokenSource.Token);
+
+            //Console.WriteLine("Press 'c' to cancel");
+            //if (Console.ReadKey(true).KeyChar == 'c')
+            //{
+            //    tokenSource.Cancel();
+            //    Console.WriteLine("Press any key to exit.");
+            //}
+
+            //Console.ReadKey();
+            //tokenSource.Dispose();
+            #endregion
+
+            #region Listen for multiple Cancellation Request
+            //ListenMultipleCancellationRequest.Run();
+            #endregion
 
             #endregion
 
+            #region Debug a parallel application
+            DebugAParrallelApplication.MainDebug();
+            #endregion
+        }
+
+        public struct Rectangle
+        {
+            public int columns;
+            public int rows;
+        }
+
+        static void NestedLoops(Rectangle rect, CancellationToken token)
+        {
+            for (int col = 0; col < rect.columns && !token.IsCancellationRequested; col++)
+            {
+                // Assume that we know that the inner loop is very fast.
+                // Therefore, polling once per column in the outer loop condition
+                // is sufficient.
+                for (int row = 0; row < rect.rows; row++)
+                {
+                    // Simulating work.
+                    Thread.SpinWait(5_000);
+                    Console.Write("{0},{1} ", col, row);
+                }
+                Thread.Sleep(1000);
+            }
+
+            if (token.IsCancellationRequested)
+            {
+                // Cleanup or undo here if necessary...
+                Console.WriteLine("\r\nOperation canceled");
+                Console.WriteLine("Press any key to exit.");
+
+                // If using Task:
+                // token.ThrowIfCancellationRequested();
+            }
         }
 
         public static void Print(object? p)
