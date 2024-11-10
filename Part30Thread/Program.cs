@@ -12,19 +12,18 @@ namespace Part30Thread
         
         static void Main(string[] args)
         {
-
             #region basics
             ////cách 2: sử dụng biến để check
             //bool isFinished = false;
 
-            Thread t1 = new Thread(() =>
-            {
-                while (!isFinished)
-                {
-                    Console.WriteLine("Hello 1111!");
-                    Thread.Sleep(1000);
-                }
-            });
+            //Thread t1 = new Thread(() =>
+            //{
+            //    while (!isFinished)
+            //    {
+            //        Console.WriteLine("Hello 1111!");
+            //        Thread.Sleep(1000);
+            //    }
+            //});
 
             //Thread t2 = new Thread(() =>
             //{
@@ -117,7 +116,11 @@ namespace Part30Thread
             #endregion
 
             #region Debug a parallel application
-            DebugAParrallelApplication.MainDebug();
+            //1
+            //DebugAParrallelApplication.MainDebug();
+
+            //2 
+            MyThreadWalkthroughApp.MainExample();   
             #endregion
         }
 
