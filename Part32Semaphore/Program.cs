@@ -1,15 +1,35 @@
 ﻿
+using Part32Semaphore.Basics;
+
 namespace Part32Semaphore
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static  void Main(string[] args)
         {
             //Console.WriteLine("Non using Semaphore......");
             //NonUsingSemaphore();
 
-            Console.WriteLine("Using Semaphore......");
-            UsingSemaphore();
+            //Console.WriteLine("Using Semaphore......");
+            //UsingSemaphore();
+
+            //Console.WriteLine("Semaphore Simple");
+            //SemaphoreSimple.MainSimple();
+
+            //Console.WriteLine("Semaphore Claude");
+            //await SemaphoreClaude.MainClaude();
+
+            // Semaphore(Int32, Int32)
+            //SemaphoreExample2.MainSemaphore();
+            
+            // Semaphore(Int32, Int32, string? name)
+            //SemaphoreExample3.MainExample3();
+
+            //How to use  Semaphore(Int32, Int32, String, Boolean)
+            //SemaphoreExample4.MainExample4();
+
+            //How to use  SemaphoreSlim
+            SemaphoreSlimExample.MainSlimExample();
         }
 
         #region USING Semaphore
@@ -22,7 +42,7 @@ namespace Part32Semaphore
 
         public static void UsingSemaphore()
         {
-            for (int i = 1; i <= 8; i++)
+            for (int i = 1; i <= 15; i++)
             {
                 var t = new Thread(new ParameterizedThreadStart(MoveItemThread))
                 {
@@ -31,7 +51,6 @@ namespace Part32Semaphore
                 };
                 t.Start(i.ToString());
             }
-
 
             var t10 = new Thread(ReplaceBox) { IsBackground = true };
             t10.Start();
@@ -71,14 +90,11 @@ namespace Part32Semaphore
         {
            while(true)
             {
-                if (ItemsBox == MAX)
-                {
-                    fullEvent.WaitOne();
-                    Console.WriteLine("Replace with a new box");
+                fullEvent.WaitOne();
+                Console.WriteLine("Replace with a new box");
 
-                    ItemsBox = 0;
-                    semaphore.Release(MAX);
-                }
+                ItemsBox = 0;
+                semaphore.Release(MAX);
             }
         }
         #endregion
