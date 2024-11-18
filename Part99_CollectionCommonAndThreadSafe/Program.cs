@@ -7,7 +7,16 @@ namespace Part99_CollectionCommonAndThreadSafe
         static void Main(string[] args)
         {
             //Recheck to Reference And Value Type
-            ReferenceAndValueTypeExample.Main1();
+            //ReferenceAndValueTypeExample.Main1();
+
+            //ConcurrentBugDemo
+            //ConcurrentBagDemo.MainConcurrentBagDemo();
+
+            //BlockingCollection:  Add and Take Items Individually 
+            //BlockingCollectionExample.MainAddAndTakeItems();
+
+            //Volatile Example
+            VolatileExample.MainVolatileExample();
         }
     }
 }
