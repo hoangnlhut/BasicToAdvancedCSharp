@@ -1,7 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
 
-namespace Part99_CollectionCommonAndThreadSafe.Examples
+namespace Part99_CollectionCommonAndThreadSafe.Examples.BlockingCollection
 {
     public class BlockingCollectionExample
     {
