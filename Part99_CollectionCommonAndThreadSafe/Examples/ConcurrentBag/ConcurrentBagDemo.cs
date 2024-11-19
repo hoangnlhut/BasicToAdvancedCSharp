@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part99_CollectionCommonAndThreadSafe.Examples
+namespace Part99_CollectionCommonAndThreadSafe.Examples.ConcurrentBag
 {
     public class ConcurrentBagDemo
     {

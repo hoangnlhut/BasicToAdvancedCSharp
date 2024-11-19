@@ -63,7 +63,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part32Semaphore", "Part32Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part33_LockMonitor", "Part33_LockMonitor\Part33_LockMonitor.csproj", "{09D31294-4CF7-4243-85CC-7D26266AB91F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part99_CollectionCommonAndThreadSafe", "Part99_CollectionCommonAndThreadSafe\Part99_CollectionCommonAndThreadSafe.csproj", "{D3842D60-E048-491B-AC9C-FAC354340FFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part99_CollectionCommonAndThreadSafe", "Part99_CollectionCommonAndThreadSafe\Part99_CollectionCommonAndThreadSafe.csproj", "{D3842D60-E048-491B-AC9C-FAC354340FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part34_AsyncAwait", "Part34_AsyncAwait\Part34_AsyncAwait.csproj", "{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -195,6 +197,10 @@ Global
 		{D3842D60-E048-491B-AC9C-FAC354340FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3842D60-E048-491B-AC9C-FAC354340FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3842D60-E048-491B-AC9C-FAC354340FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
