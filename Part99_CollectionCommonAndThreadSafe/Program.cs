@@ -1,4 +1,6 @@
 ﻿using Part99_CollectionCommonAndThreadSafe.Examples.BlockingCollection;
+using Part99_CollectionCommonAndThreadSafe.Examples.ConcurrentDictionary;
+using Part99_CollectionCommonAndThreadSafe.Examples.CustomBlockingCollection;
 
 namespace Part99_CollectionCommonAndThreadSafe
 {
@@ -20,8 +22,18 @@ namespace Part99_CollectionCommonAndThreadSafe
             //BlockingCollectionWithCancellation.MainBlockingCollectionWithCancellation();
 
             // Blocking Collection with Foreach
-            await BlockingCollectionUsingForeach.MainBlockingCollectionUsingForeach();
+            //await BlockingCollectionUsingForeach.MainBlockingCollectionUsingForeach();
+
+            //Custom blocking collection : Add Bounding and Blocking Functionality to a Collection
+            CustomBlockingCollectionExample.MainCustomBlockingCollectionExample();
             #endregion
+
+            #region Concurrent Dictionary Examples
+            //ConcurrentDictionaryBasicExample.MainConcurrentDictionaryBasicExample();
+
+            await ConcurrentDictionaryExample.MainConcurrentDictionaryExample();
+            #endregion
+
             //Volatile Example
             //VolatileExample.MainVolatileExample();
 
