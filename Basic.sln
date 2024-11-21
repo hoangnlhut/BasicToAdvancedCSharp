@@ -67,6 +67,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part99_CollectionCommonAndT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part34_AsyncAwait", "Part34_AsyncAwait\Part34_AsyncAwait.csproj", "{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part34_WhyAspnetShouldUseAsync", "Part34_WhyAspnetShouldUseAsync\Part34_WhyAspnetShouldUseAsync.csproj", "{E301635D-48A8-4B02-94DA-E36D6F7E584C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +203,10 @@ Global
 		{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E301635D-48A8-4B02-94DA-E36D6F7E584C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E301635D-48A8-4B02-94DA-E36D6F7E584C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E301635D-48A8-4B02-94DA-E36D6F7E584C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E301635D-48A8-4B02-94DA-E36D6F7E584C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
