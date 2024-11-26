@@ -13,7 +13,13 @@ namespace Part34_AsyncAwait
 
             //await AsycnAwaitUnderThehood.MainUnderTheHood();
 
-            ThreadPoolExample.MainThreadPoolExample();
+            //ThreadPoolExample.MainThreadPoolExample();
+
+            //await BreakfastExample.MainBreakfast();
+
+            //UsingIAsyncEnumerable.MainIAsyncEnumerable();
+
+           await ProcessAsycnTaskAsTheyComplete.MainProcessAsycnTaskAsTheyComplete();
         }
     }
 }
