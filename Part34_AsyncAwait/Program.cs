@@ -19,7 +19,13 @@ namespace Part34_AsyncAwait
 
             //UsingIAsyncEnumerable.MainIAsyncEnumerable();
 
-           await ProcessAsycnTaskAsTheyComplete.MainProcessAsycnTaskAsTheyComplete();
+            //await ProcessAsycnTaskAsTheyComplete.MainProcessAsycnTaskAsTheyComplete();
+
+            //await CancelAListOfTask.MainCancelAListOfTask();
+
+            //await CancelAListOfTask.MainCancelTaskAfterPeriodOfTime();
+
+            await GenerateAndConsumeAsynchronousStreams.MainGenerateAndConsumeAsynchronousStreams();
         }
     }
 }
