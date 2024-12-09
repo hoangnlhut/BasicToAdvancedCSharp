@@ -65,9 +65,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part33_LockMonitor", "Part3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part99_CollectionCommonAndThreadSafe", "Part99_CollectionCommonAndThreadSafe\Part99_CollectionCommonAndThreadSafe.csproj", "{D3842D60-E048-491B-AC9C-FAC354340FFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part34_AsyncAwait", "Part34_AsyncAwait\Part34_AsyncAwait.csproj", "{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part34_AsyncAwait", "Part34_AsyncAwait\Part34_AsyncAwait.csproj", "{3AD52DA6-CF70-4F60-9D90-0E25B0ED2090}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part34_WhyAspnetShouldUseAsync", "Part34_WhyAspnetShouldUseAsync\Part34_WhyAspnetShouldUseAsync.csproj", "{E301635D-48A8-4B02-94DA-E36D6F7E584C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part34_WhyAspnetShouldUseAsync", "Part34_WhyAspnetShouldUseAsync\Part34_WhyAspnetShouldUseAsync.csproj", "{E301635D-48A8-4B02-94DA-E36D6F7E584C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part35_ParallelProgramming", "Part35_ParallelProgramming\Part35_ParallelProgramming.csproj", "{7039E157-D6DA-41F5-8FCE-363930BAF650}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -207,6 +209,10 @@ Global
 		{E301635D-48A8-4B02-94DA-E36D6F7E584C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E301635D-48A8-4B02-94DA-E36D6F7E584C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E301635D-48A8-4B02-94DA-E36D6F7E584C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7039E157-D6DA-41F5-8FCE-363930BAF650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7039E157-D6DA-41F5-8FCE-363930BAF650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7039E157-D6DA-41F5-8FCE-363930BAF650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7039E157-D6DA-41F5-8FCE-363930BAF650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
