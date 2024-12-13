@@ -69,7 +69,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part34_AsyncAwait", "Part34
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part34_WhyAspnetShouldUseAsync", "Part34_WhyAspnetShouldUseAsync\Part34_WhyAspnetShouldUseAsync.csproj", "{E301635D-48A8-4B02-94DA-E36D6F7E584C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part35_ParallelProgramming", "Part35_ParallelProgramming\Part35_ParallelProgramming.csproj", "{7039E157-D6DA-41F5-8FCE-363930BAF650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part35_ParallelProgramming", "Part35_ParallelProgramming\Part35_ParallelProgramming.csproj", "{7039E157-D6DA-41F5-8FCE-363930BAF650}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part35_DataFlow_CompositeImagesWinForms", "Part35_DataFlow_CompositeImagesWinForms\Part35_DataFlow_CompositeImagesWinForms.csproj", "{58AB06DD-F15A-48D6-AD2A-00C7AB7F48A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -213,6 +215,10 @@ Global
 		{7039E157-D6DA-41F5-8FCE-363930BAF650}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7039E157-D6DA-41F5-8FCE-363930BAF650}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7039E157-D6DA-41F5-8FCE-363930BAF650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58AB06DD-F15A-48D6-AD2A-00C7AB7F48A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58AB06DD-F15A-48D6-AD2A-00C7AB7F48A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58AB06DD-F15A-48D6-AD2A-00C7AB7F48A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58AB06DD-F15A-48D6-AD2A-00C7AB7F48A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
