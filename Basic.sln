@@ -73,6 +73,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Part35_ParallelProgramming"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part35_DataFlow_CompositeImagesWinForms", "Part35_DataFlow_CompositeImagesWinForms\Part35_DataFlow_CompositeImagesWinForms.csproj", "{58AB06DD-F15A-48D6-AD2A-00C7AB7F48A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part35_DataFlow_CancelDataFlowBlockApp", "Part35_DataFlow_CancelDataFlowBlockApp\Part35_DataFlow_CancelDataFlowBlockApp.csproj", "{735B78B7-4465-482B-AAB7-29D3684AA042}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -219,6 +221,10 @@ Global
 		{58AB06DD-F15A-48D6-AD2A-00C7AB7F48A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58AB06DD-F15A-48D6-AD2A-00C7AB7F48A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58AB06DD-F15A-48D6-AD2A-00C7AB7F48A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{735B78B7-4465-482B-AAB7-29D3684AA042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{735B78B7-4465-482B-AAB7-29D3684AA042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{735B78B7-4465-482B-AAB7-29D3684AA042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{735B78B7-4465-482B-AAB7-29D3684AA042}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
