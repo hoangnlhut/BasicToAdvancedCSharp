@@ -35,7 +35,8 @@ namespace Part35_ParallelProgramming
             //PerformActionWhenDataflowBlockReceivesData.MainPerformActionWhenDataflowBlockReceivesData();
             //ADataFlowPipeline.MainADataFlowPipeline();
             //CustomDataBlockType.MainCustomDataBlockType();
-            JoinBlockReadDataFromMultipleSources.MainJoinBlockReadDataFromMultipleSources();
+            //JoinBlockReadDataFromMultipleSources.MainJoinBlockReadDataFromMultipleSources();
+            SpecifyTheDegreeOfParallelismInaDataflowBlock.MainSpecifyTheDegreeOfParallelismInaDataflowBlock();
             #endregion
 
         }
