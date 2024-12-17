@@ -34,7 +34,8 @@ namespace Part35_ParallelProgramming
             //await ProducerConsumerDataFlowPattern.MainProducerConsumerDataFlowPattern()
             //PerformActionWhenDataflowBlockReceivesData.MainPerformActionWhenDataflowBlockReceivesData();
             //ADataFlowPipeline.MainADataFlowPipeline();
-            CustomDataBlockType.MainCustomDataBlockType();
+            //CustomDataBlockType.MainCustomDataBlockType();
+            JoinBlockReadDataFromMultipleSources.MainJoinBlockReadDataFromMultipleSources();
             #endregion
 
         }
