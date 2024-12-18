@@ -77,6 +77,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part35_DataFlow_CancelDataF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part35_DataFlow_WriterReadersWinForms_TaskSchedulerInADataflowBlock", "Part35_DataFlow_WriterReadersWinForms_TaskSchedulerInADataflowBlock\Part35_DataFlow_WriterReadersWinForms_TaskSchedulerInADataflowBlock.csproj", "{0068B9F3-644F-4B39-8DCA-DC7343DF3C01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part35_DataFlow_InsertBatchDatabaseUseBatchJoinBlock", "Part35_DataFlow_InsertBatchDatabaseUseBatchJoinBlock\Part35_DataFlow_InsertBatchDatabaseUseBatchJoinBlock.csproj", "{09902152-4D50-4C5F-A504-B63130235373}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -231,6 +233,10 @@ Global
 		{0068B9F3-644F-4B39-8DCA-DC7343DF3C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0068B9F3-644F-4B39-8DCA-DC7343DF3C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0068B9F3-644F-4B39-8DCA-DC7343DF3C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09902152-4D50-4C5F-A504-B63130235373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09902152-4D50-4C5F-A504-B63130235373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09902152-4D50-4C5F-A504-B63130235373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09902152-4D50-4C5F-A504-B63130235373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
