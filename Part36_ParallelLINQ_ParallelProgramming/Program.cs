@@ -1,7 +1,9 @@
-﻿internal class Program
+﻿using Part36_ParallelLINQ_ParallelProgramming;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        SimplePLinqQuery.MainSimplePLinqQuery();
     }
 }
