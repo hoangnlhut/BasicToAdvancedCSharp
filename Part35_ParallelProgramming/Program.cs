@@ -1,6 +1,7 @@
 ﻿using Part35_ParallelProgramming.AISampleCodeInParrallelForAndForEach;
 using Part35_ParallelProgramming.Dataflow;
 using Part35_ParallelProgramming.TaskBasedAsyncProgramming;
+using Part35_ParallelProgramming.WrapEAPPattern;
 
 namespace Part35_ParallelProgramming
 {
@@ -36,9 +37,12 @@ namespace Part35_ParallelProgramming
             //ADataFlowPipeline.MainADataFlowPipeline();
             //CustomDataBlockType.MainCustomDataBlockType();
             //JoinBlockReadDataFromMultipleSources.MainJoinBlockReadDataFromMultipleSources();
-            SpecifyTheDegreeOfParallelismInaDataflowBlock.MainSpecifyTheDegreeOfParallelismInaDataflowBlock();
+            //SpecifyTheDegreeOfParallelismInaDataflowBlock.MainSpecifyTheDegreeOfParallelismInaDataflowBlock();
             #endregion
 
+            #region Wrap EAP Patterns in a Task
+            WebDataDownloader.MainWebDataDownloader();
+            #endregion
         }
-}
+    }
 }
