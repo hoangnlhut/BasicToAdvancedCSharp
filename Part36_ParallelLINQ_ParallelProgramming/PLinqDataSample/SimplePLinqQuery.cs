@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part36_ParallelLINQ_ParallelProgramming
+namespace Part36_ParallelLINQ_ParallelProgramming.PLinqDataSample
 {
     //reference: https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/how-to-create-and-execute-a-simple-plinq-query
     public class SimplePLinqQuery
@@ -28,8 +28,8 @@ namespace Part36_ParallelLINQ_ParallelProgramming
 
 
             stopwatch.Start();
-            List<int> list =new List<int>();
-            foreach( int num in source)
+            List<int> list = new List<int>();
+            foreach (int num in source)
             {
                 if (num % 2 == 0) list.Add(num);
             }
@@ -69,7 +69,8 @@ namespace Part36_ParallelLINQ_ParallelProgramming
             Console.ReadLine();
         }
 
-        static void DoSomething(int nunber) {
+        static void DoSomething(int nunber)
+        {
             Console.WriteLine($"Do something number {nunber}");
         }
     }

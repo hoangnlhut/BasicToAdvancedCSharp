@@ -1,9 +1,31 @@
-﻿using Part36_ParallelLINQ_ParallelProgramming;
+﻿using Part36_ParallelLINQ_ParallelProgramming.PLinqDataSample;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        SimplePLinqQuery.MainSimplePLinqQuery();
+        //SimplePLinqQuery.MainSimplePLinqQuery();
+
+        #region Control Ordering in a PLINQ Query
+        //ControlOrderinginaPLINQQuery.Example1();
+        //ControlOrderinginaPLINQQuery.SimpleOrdering();
+        //ControlOrderinginaPLINQQuery.OrderedThenUnordered();    
+        #endregion
+
+        //SequenceDemo.SequentialDemo();
+
+        //HandleException.PLINQExceptions_1();
+        //HandleException.PLINQExceptions_2();
+
+        //CancelAQuery.MainCancelAQuery_1();
+        //CancelAQuery.MainancelAQuery_2();
+
+        //CustomAggregateFunction.MainCustomAggregateFunction();
+
+        MergeOption.MainMergeOptionNotBuffer();
+        MergeOption.MainMergeOptionAutoBuffer();
+        MergeOption.MainMergeOptionFullyBuffer();
+
+
     }
 }
