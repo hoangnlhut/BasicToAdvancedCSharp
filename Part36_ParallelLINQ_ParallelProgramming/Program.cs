@@ -1,4 +1,5 @@
-﻿using Part36_ParallelLINQ_ParallelProgramming.PLinqDataSample;
+﻿using Part36_ParallelLINQ_ParallelProgramming.CustomPartitionersForPLINQAndTPL;
+using Part36_ParallelLINQ_ParallelProgramming.PLinqDataSample;
 
 internal class Program
 {
@@ -22,10 +23,22 @@ internal class Program
 
         //CustomAggregateFunction.MainCustomAggregateFunction();
 
-        MergeOption.MainMergeOptionNotBuffer();
-        MergeOption.MainMergeOptionAutoBuffer();
-        MergeOption.MainMergeOptionFullyBuffer();
+        //MergeOption.MainMergeOptionNotBuffer();
+        //MergeOption.MainMergeOptionAutoBuffer();
+        //MergeOption.MainMergeOptionFullyBuffer();
 
+        //IterateFileDirectories.FileIterationOne(@"E:\Hoang_Corner\EBOOKS");
+        //Console.WriteLine();
+        //Console.WriteLine();
+        //IterateFileDirectories.FileIterationTwo(@"E:\Hoang_Corner\EBOOKS");
+
+        //UsingStopWatchToMeasureQueryPerformance.MainUsingStopWatchToMeasureQueryPerformance();
+
+        //How to: Implement Dynamic Partitions
+        //ConsumerClass.MainConsumerClass();
+
+        //How to: Implement a Partitioner for Static Partitioning
+        StaticPartitioningConsumer.MainStaticPartitioningConsumer();
 
     }
 }
