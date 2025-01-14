@@ -38,7 +38,10 @@ internal class Program
         //ConsumerClass.MainConsumerClass();
 
         //How to: Implement a Partitioner for Static Partitioning
-        StaticPartitioningConsumer.MainStaticPartitioningConsumer();
+        //StaticPartitioningConsumer.MainStaticPartitioningConsumer();
+
+        Part36_ParallelLINQ_ParallelProgramming.Test hoang = new Part36_ParallelLINQ_ParallelProgramming.MyClass("hoang");
+        hoang.Print();
 
     }
 }

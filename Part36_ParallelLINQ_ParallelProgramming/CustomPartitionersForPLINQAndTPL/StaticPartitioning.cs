@@ -118,6 +118,12 @@ namespace Part36_ParallelLINQ_ParallelProgramming.CustomPartitionersForPLINQAndT
         {
             var source = Enumerable.Range(0, 1000).ToArray();
 
+            var source3 = Enumerable.Range(0, 10);
+            var source4 = source3.Append(11);
+
+            Console.WriteLine($"Count source 3 : {source3.Count()} - Count source 4 : {source4.Count()}");
+
+
             Stopwatch sw = Stopwatch.StartNew();
             MyPartitioner partitioner = new MyPartitioner(source, .5);
 

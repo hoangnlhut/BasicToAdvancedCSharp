@@ -155,9 +155,9 @@ namespace Part29_Reflection
             #endregion
 
             #region nam .net
-            //var dll = @"E:\LEARNING\SELF_TRAINING_FOLDER\C#Nam.NETFrom0To1\Basic\Part29MyAssembly\bin\Debug\net8.0\Part29MyAssembly.dll";
-            //args = new string[] { dll };
-            //NamReflection.NamDotNetReflection(args);
+            var dll = @"E:\LEARNING\SELF_TRAINING_FOLDER\C#Nam.NETFrom0To1\Basic\Part29MyAssembly\bin\Debug\net8.0\Part29MyAssembly.dll";
+            args = new string[] { dll };
+            NamReflection.NamDotNetReflection(args);
             #endregion
 
             #region Call Network Monitor app
