@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part35_DataFlow_InsertBatch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part36_ParallelLINQ_ParallelProgramming", "Part36_ParallelLINQ_ParallelProgramming\Part36_ParallelLINQ_ParallelProgramming.csproj", "{757BA58C-3B7C-4509-9C3D-BD74416FC07A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part100_DesignPattern_Practicing", "Part100_DesignPattern_Practicing\Part100_DesignPattern_Practicing.csproj", "{196B7C2B-810D-4B5E-93B4-246994A050D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,6 +245,10 @@ Global
 		{757BA58C-3B7C-4509-9C3D-BD74416FC07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{757BA58C-3B7C-4509-9C3D-BD74416FC07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{757BA58C-3B7C-4509-9C3D-BD74416FC07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{196B7C2B-810D-4B5E-93B4-246994A050D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{196B7C2B-810D-4B5E-93B4-246994A050D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{196B7C2B-810D-4B5E-93B4-246994A050D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{196B7C2B-810D-4B5E-93B4-246994A050D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
