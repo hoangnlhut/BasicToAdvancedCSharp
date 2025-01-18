@@ -1,4 +1,5 @@
 ﻿using Part100_DesignPattern_Practicing._1stTime.Creational;
+using Part100_DesignPattern_Practicing._1stTime.Structural;
 
 public class Program
 {
@@ -6,7 +7,6 @@ public class Program
     {
         #region Practicing First Time
         #region Creational Patterns
-
         #region Singleton 
         // non thread safe
         //var nonSafeThread1 =  SingletonNonSafeThread.GetInstance();
@@ -76,7 +76,57 @@ public class Program
         //Console.WriteLine(productA.GetProduct().ListParts());
 
         #endregion
+        #endregion
+        #region Structural Patterns
+        #region Adapter
+        //Console.WriteLine("Thiet bi 2 chan cam vao o dien");
+        //ClientInAdapter client = new ClientInAdapter(new AdapterOCamDien(new Sockets2LoCamDien()));
+        //client.MainClient();
 
+        //Console.WriteLine();
+
+        //Console.WriteLine("Thiet bi 3 chan cam vao o dien");
+        //client = new ClientInAdapter(new AdapterOCamDien(new Sockets3LoCamDien()));
+        //client.MainClient();
+        #endregion
+
+        #region Decorator
+        //var a = new ConcreteComponent();
+        //var b = new ConcreteDecoratorA(a);
+        //var c = new ConcreteDecoratorB(b);
+        //Console.WriteLine(c.Execute()); 
+
+        //Console.WriteLine("Make an thick pizza with cheese and tomato on top");
+        //var plate = new ThickBasePizza();
+        //var addCheese = new CheeseDecorator(plate);
+        //var addTomato = new TomatoDecorator(addCheese);
+        //addTomato.DoPizza();
+
+        //Console.WriteLine();
+        //Console.WriteLine("-------------------");
+
+        //Console.WriteLine("Make an thin pizza with bacon and onion on top");
+        //var newPlate = new ThinBasePizza();
+        //var bacon = new BaconDecorator(newPlate);
+        //var onion = new OnionDecorator(bacon);
+        //onion.DoPizza();
+
+        //Console.WriteLine();
+        //Console.WriteLine("-------------------");
+
+        //Console.WriteLine("Full-toping Thick plate pizza ");
+        //var fullPlate = new ThickBasePizza();
+        //var addCheeseFull = new CheeseDecorator(fullPlate);
+        //var addTomatoFull = new TomatoDecorator(addCheeseFull);
+        //var addBaconFull = new BaconDecorator(addTomatoFull);
+        //var addOnionFull = new OnionDecorator(addBaconFull);
+        //addOnionFull.DoPizza();
+
+        #endregion
+
+        #region Facade Pattern
+        ClientFacade.MainClientFacade();
+        #endregion
 
 
         #endregion
