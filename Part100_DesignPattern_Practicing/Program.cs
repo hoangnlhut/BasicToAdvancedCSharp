@@ -1,4 +1,5 @@
-﻿using Part100_DesignPattern_Practicing._1stTime.Creational;
+﻿using Part100_DesignPattern_Practicing._1stTime.Behavior;
+using Part100_DesignPattern_Practicing._1stTime.Creational;
 using Part100_DesignPattern_Practicing._1stTime.Structural;
 
 public class Program
@@ -125,9 +126,80 @@ public class Program
         #endregion
 
         #region Facade Pattern
-        ClientFacade.MainClientFacade();
+        //ClientFacade.MainClientFacade();
+        #endregion
+        #endregion
+        #region Behavioral Patterns
+        #region Observer
+        //ClientObserver.MainClient();
         #endregion
 
+        #region Strategy
+        //Console.WriteLine("Get destination by Walking  ");
+        //ContextStrategy context = new ContextStrategy(new Walking());
+        //context.Move();
+        //Console.WriteLine();
+        //Console.WriteLine();
+
+        //Console.WriteLine("Get destination by Running  ");
+        //context.SetStrategy(new Running());
+        //context.Move();
+        //Console.WriteLine();
+        //Console.WriteLine();
+
+        //Console.WriteLine("Get destination by Car  ");
+        //context.SetStrategy(new CarMoving());
+        //context.Move();
+        //Console.WriteLine();
+        //Console.WriteLine();
+
+        //Console.WriteLine("Get destination by Bus  ");
+        //context.SetStrategy(new PublicTransportation());
+        //context.Move();
+        //Console.WriteLine();
+        //Console.WriteLine();
+
+        #endregion
+
+        #region Command
+        //ClientCommand.Run();
+        #endregion
+
+        #region State Pattern
+        //try
+        //{
+        //    Console.WriteLine("Create new Order");
+        //    Context context = new Context(new CreatedState());
+        //    context.Cancel();
+
+        //    Console.WriteLine("Create new Order");
+        //    Context context1 = new Context(new CreatedState());
+        //    context1.Paid();
+        //    context1.Delivered();
+        //    context1.Done();
+
+        //    context1.Cancel();
+        //}
+        //catch (Exception ex)
+        //{
+        //    Console.WriteLine(ex.Message);
+        //}
+        #endregion
+
+        #region Template Method
+        HouseBuildingTemplateMethod woodenHouse = new WoodenHouse();
+        woodenHouse.BuildHouse();
+        Console.WriteLine();
+        Console.WriteLine("----------------------------------------");
+
+        HouseBuildingTemplateMethod glassHouse = new GlassHouse();
+        glassHouse.BuildHouse();
+        Console.WriteLine();
+        Console.WriteLine("----------------------------------------");
+
+        HouseBuildingTemplateMethod simenHouse = new SimenHouse();
+        simenHouse.BuildHouse();
+        #endregion
 
         #endregion
         #endregion
