@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -258,7 +259,7 @@ namespace Part101_DSA.ArraysAndHash
                         return false;
                     }
                 }
-                
+
                 return true;
             }
 
@@ -272,7 +273,7 @@ namespace Part101_DSA.ArraysAndHash
                 };
                 foreach (var item in strings)
                 {
-                    Console.WriteLine($"SortArray : {SortArray(item.Item1, item.Item2)}"); 
+                    Console.WriteLine($"SortArray : {SortArray(item.Item1, item.Item2)}");
                     Console.WriteLine($"TwoArrayAndCalculateByCharacter : {TwoArrayAndCalculateByCharacter(item.Item1, item.Item2)}");
                     Console.WriteLine($"TwoDictionary : {TwoDictionary(item.Item1, item.Item2)}");
                     Console.WriteLine($"OnlyOneArrayBest : {OnlyOneArrayBest(item.Item1, item.Item2)}");
@@ -281,7 +282,332 @@ namespace Part101_DSA.ArraysAndHash
                 }
             }
 
-            #endregion
         }
+        #endregion
+
+        #region 2.How to reverse String in C# using Iteration and Recursion? 
+        public static void ReverseString1(string input)
+        {
+            Console.WriteLine($"Input: {input}");
+            var arrInput = input.ToCharArray();
+            StringBuilder resut = new StringBuilder();
+            for (int i = arrInput.Length - 1; i >= 0; i--)
+            {
+                resut.Append(arrInput[i]);
+            }
+            Console.WriteLine($"Reversed Input: {resut.ToString()}");
+        }
+
+        public static void ReverseStringUsingMethod(string input)
+        {
+            Console.WriteLine($"Input: {input}");
+            var charArr = input.ToCharArray();
+            Array.Reverse(charArr);
+            Console.WriteLine($"Reversed Input: {new string(charArr)}");
+
+        }
+        #endregion
+
+
+        #region 3.How to count number of words in a String
+        public class CountNumberWords
+        {
+            public static void UsingCount(string paragraph)
+            {
+                Console.WriteLine($"Paragraph: {paragraph}");
+                var subWords = paragraph.Trim().Split(" ");
+
+                var count = subWords.Count();
+
+                subWords.ToList().ForEach(item =>
+                {
+                    if (string.IsNullOrWhiteSpace(item.Trim()))
+                    {
+                        count--;
+                    }
+                });
+
+                Console.WriteLine($"Number of words: {count}");
+            }
+
+            public static void UsingSplit(string paragraph)
+            {
+                Console.WriteLine($"Paragraph: {paragraph}");
+                var words = paragraph.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                Console.WriteLine($"Number of words: {words.Length}");
+            }
+        }
+        #endregion
+
+        #region 4. How to check if String is Palindrome?
+        public class CheckIsPalindrome
+        {
+
+            public static void UsingLoop(string word)
+            {
+                if (string.IsNullOrWhiteSpace(word.Trim()) || word.Length <= 2)
+                {
+                    Console.WriteLine("Word is not in correct format");
+                    return;
+                }
+
+                Console.WriteLine($"Word: {word}");
+                var arrWord1 = "";
+                for (int i = 0; i < word.Length / 2; i++)
+                {
+                    arrWord1 += word[i];
+                }
+
+                var arrWord2 = "";
+                for (int j = word.Length - 1; j > word.Length / 2; j--)
+                {
+                    arrWord2 += word[j];
+                }
+
+                Console.WriteLine($"Word is Palindrom: {new string(arrWord1) == new string(arrWord2)}");
+
+            }
+
+            public static void MainPalindrom()
+            {
+                string[] array =
+                {
+                      "civic",
+                      "deleveled",
+                      "Hannah",
+                      "kayak",
+                      "level",
+                        "examiron",
+                        "racecar",
+                      "radar",
+                      "refer",
+                      "reviver",
+                        "easywcf",
+                      "rotator",
+                      "rotor",
+                      "sagas",
+                      "solos",
+                      "stats",
+                      "tenet",
+                        "Csharpstar",
+                      ""
+                  };
+
+                foreach (var item in array)
+                {
+                    ArraysAndHash.CheckIsPalindrome.UsingLoop(item);
+                }
+
+            }
+        }
+
+        #endregion
+
+        #region 5. How to remove duplicate characters from String?
+        public class RemoveDuplicateCharacter
+        {
+            public static void MainRemoveDuplicateCharacter()
+            {
+                var setWord = new string[]
+                {
+                    "Csharpstar",   // -> Csharpt
+                    "Google",   // -> Gogle
+                    "Yahoo",    // -> Yaho
+                    "CNN"    // -> CN
+                };
+
+                foreach (var item in setWord)
+                {
+                    UsingSet(item);
+                }
+
+                
+                //Using2Loop();
+            }
+
+            public static void UsingSet(string word)
+            {
+                Console.WriteLine($"Word: {word}");
+                if (string.IsNullOrEmpty(word))
+                {
+                    Console.WriteLine("Word is null or empty");
+                    return;
+                }
+
+                HashSet<char> distinctChars = new HashSet<char>(word);
+
+                if (distinctChars.Count < word.Length)
+                {
+                    Console.WriteLine($"Word have some duplicates");
+                    var newWord = "";
+                    foreach (var item in distinctChars)
+                    {
+                        newWord += item;
+                    }
+
+                    Console.WriteLine($"Word after remove duplicate characters: {newWord}");
+                }
+                else
+                {
+                    Console.WriteLine($"Word without duplicates");
+                }
+
+            }
+
+            public static void Using2Loop(string word)
+            {
+                Console.WriteLine($"Word: {word}");
+                if (string.IsNullOrEmpty(word))
+                {
+                    Console.WriteLine("Word is null or empty");
+                    return;
+                }
+
+                Dictionary<char, int> duplicatesCharacter = new Dictionary<char, int>();
+
+                foreach (var item in word.ToCharArray())
+                {
+                    if (duplicatesCharacter.ContainsKey(item))
+                    {
+                        duplicatesCharacter[item]++;
+                    }
+                    else
+                    {
+                        duplicatesCharacter[item] = 1;
+                    }
+                    
+                }
+
+                HashSet<char> distinctChars = new HashSet<char>(word);
+
+                foreach (var item1 in distinctChars)
+                {
+                    if (duplicatesCharacter.ContainsKey(item1))
+                    {
+                        duplicatesCharacter[item1]--;
+                    }
+                }
+
+                foreach (var item in duplicatesCharacter)
+                {
+                    if (item.Value > 0)
+                    {
+                        Console.WriteLine($"Word have duplicates of {item.Key}");
+                    }
+                }
+            }
+        }
+        #endregion
+
+
+        #region 6. How to return highest occurred character in a String?
+        public class HighestOccurredCharacter
+        {
+            public static void MainHighestOccurredCharacter()
+            {
+                var setWord = new string[]
+                {
+                    "Csharpstar",   // -> Csharpt
+                    "Google",   // -> Gogle
+                    "Yahoo",    // -> Yaho
+                    "CNN",   // -> CN
+                    "sdsdfffffff",
+                    "hoangggggzzzzzzzzz"
+                };
+                foreach (var item in setWord)
+                {
+                    UsingSet(item);
+                }
+            }
+            public static void UsingSet(string word)
+            {
+                Console.WriteLine($"Word: {word}");
+                if (string.IsNullOrEmpty(word))
+                {
+                    Console.WriteLine("Word is null or empty");
+                    return;
+                }
+                Dictionary<char, int> duplicatesCharacter = new Dictionary<char, int>();
+                foreach (var item in word.ToCharArray())
+                {
+                    if (duplicatesCharacter.ContainsKey(item))
+                    {
+                        duplicatesCharacter[item]++;
+                    }
+                    else
+                    {
+                        duplicatesCharacter[item] = 1;
+                    }
+                }
+                var max = duplicatesCharacter.Values.Max();
+                var result = duplicatesCharacter.FirstOrDefault(x => x.Value == max).Key;
+                Console.WriteLine($"Highest occurred character: {result}");
+            }
+        }
+        #endregion
+
+        #region 7. How to determine if the string has all unique characters
+        public class UniqueCharacter
+        {
+            public static void MainUniqueCharacter()
+            {
+                var setWord = new string[]
+                {
+                    "Csharpstar",   // -> Csharpt
+                    "Google",   // -> Gogle
+                    "Yahoo",    // -> Yaho
+                    "CNN",   // -> CN
+                    "sdsdfffffff",
+                    "hoangggggzzzzzzzzz",
+                    "qwertyu",
+                    "fghjkJKL"
+                };
+                foreach (var item in setWord)
+                {
+                    UsingSetHoang(item);
+                }
+            }
+
+            private static void UsingSetHoang(string word)
+            {
+                Console.WriteLine($"Word : {word}");
+                Dictionary<char, int> resuts = new Dictionary<char, int>();
+                foreach (var item in word)
+                {
+                    if (resuts.ContainsKey(item))
+                    {
+                        resuts[item]++;
+                    }
+                    else
+                    {
+                        resuts[item] = 1;
+                    }
+                }
+
+                var getAllResult = resuts.Where(x => x.Value == 1).ToList();
+                if(getAllResult.Count == word.Length)
+                {
+                    Console.WriteLine("All characters are unique");
+                }
+                else
+                {
+                    if (getAllResult.Count < 1)
+                    {
+                        Console.WriteLine("Our word has many duplicate and HAS NO UNIQUE CHARACTER");
+                    }
+                    else
+                    {
+                        foreach (var item1 in getAllResult)
+                        {
+                            Console.WriteLine($"Unique Character is {item1.Key}");
+                        }
+                    }
+                   
+                }
+            }
+        }
+        #endregion
+
+
     }
 }
