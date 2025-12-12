@@ -14,8 +14,13 @@ namespace Part11_12OOP
         void Write();
     }
 
+    interface ITalk
+    {
+        void Read();
+    }
+
     // lớp Document đơn giản thực thi giao diện IStorable
-    public class Document : IStorable
+    public class Document : IStorable, ITalk
     {
         // bộ khởi dựng
         public Document(string s)
@@ -26,6 +31,11 @@ namespace Part11_12OOP
         public virtual void Read()
         {
             Console.WriteLine("Document Read Method for IStorable");
+        }
+
+        void ITalk.Read()
+        {
+            Console.WriteLine("Document Read Method for ITalk");
         }
 
 
