@@ -17,6 +17,7 @@ namespace Part11_12OOP
     interface ITalk
     {
         void Read();
+        void Hide();
     }
 
     // lớp Document đơn giản thực thi giao diện IStorable
@@ -36,6 +37,11 @@ namespace Part11_12OOP
         void ITalk.Read()
         {
             Console.WriteLine("Document Read Method for ITalk");
+        }
+
+        void ITalk.Hide()
+        {
+            Console.WriteLine("Document Hide Method for ITalk");
         }
 
 
@@ -77,6 +83,14 @@ namespace Part11_12OOP
                 isNote.Read();
                 isNote.Write();
             }
+
+            ITalk isTalk = theNote as ITalk;
+            if (isTalk != null)
+            {
+                isTalk.Read();
+                isTalk.Hide();
+            }
+
             Console.WriteLine("\n");
             // trực tiếp gọi phương thức
             theNote.Read();
