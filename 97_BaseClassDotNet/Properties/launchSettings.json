@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "97_BaseClassDotNet": {
+      "commandName": "Project",
+      "commandLineArgs": "hoangtext\r\nhoang1=\"toilahoang1\"\r\nhoang2=\"toilahoang2\"\r\nhoang3=\"toilahoang3\"",
+      "environmentVariables": {
+        "file": "hoang",
+        "viet": "3",
+        "hop": "2",
+        "huong": "5"
+      }
+    }
+  }
+}
