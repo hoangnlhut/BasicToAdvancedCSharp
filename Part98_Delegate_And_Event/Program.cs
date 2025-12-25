@@ -183,5 +183,3 @@ namespace Part98_Delegate_And_Event
     }
 
 }
-
-
