@@ -7,25 +7,27 @@ namespace Part38_WorkerService_WebServer
     {
         public static void Main(string[] args)
         {
-            //var builder = Host.CreateApplicationBuilder(args);
-            //builder.Services.AddHostedService<Worker>();
+            var builder = Host.CreateApplicationBuilder(args);
+            builder.Services.AddHostedService<Worker>();
 
-            //var host = builder.Build();
-            //host.Run();
+            var host = builder.Build();
+            host.Run();
 
 
+            #region test old method (remove later)
             //TestReferenceParameter();
             //TestParamSring();
             //TestParamClassObject();
-
             //TestPolymorphism();
 
             //int i = 10;
             //object o = i; // boxing 
             //int j = (int)o; // unboxing
+            #endregion
         }
 
 
+        #region Aome code to remove
         public class HoangModel
         {
             public readonly int numberTwo;
@@ -41,7 +43,8 @@ namespace Part38_WorkerService_WebServer
             }
 
 
-            public HoangModel() {
+            public HoangModel()
+            {
                 numberTwo = 100;
                 OnlySet = "hoang dep trai";
                 //OnlyInitSet = "hahaha";
@@ -57,7 +60,7 @@ namespace Part38_WorkerService_WebServer
                 get
                 {
                     _money = _money > 0 ? _money : 10000;
-                    return  _money;
+                    return _money;
                 }
 
                 set
@@ -143,5 +146,6 @@ namespace Part38_WorkerService_WebServer
         {
             return a + b + c;
         }
+        #endregion
     }
 }
