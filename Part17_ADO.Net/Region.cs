@@ -14,7 +14,7 @@ namespace Part17_ADO.Net
         public Region(IConfiguration configuration)
         {
             _configuration = configuration;
-        }
+        }   
 
         public void All()
         {
