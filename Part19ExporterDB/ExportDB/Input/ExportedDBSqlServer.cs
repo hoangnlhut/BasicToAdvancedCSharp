@@ -38,23 +38,23 @@ namespace Part19ExportDB.Input
             using SqlCommand command = new SqlCommand(CommandText, sqlConnection);
 
             sqlConnection.Open();
-
             using var reader = command.ExecuteReader();
             {
                 if (!reader.HasRows) { return datas; }
                 datas = DynamicDataReaderMapper.MapToDynamicList(reader).ToList();
-                #region how to see key and value of dictionary
-                //foreach (var item in datas)
-                //{
-                //    Console.WriteLine("New Row:");
-                //    foreach (var property in (IDictionary<string, object>)item)
-                //    {
-                //        Console.WriteLine($"  {property.Key}: {property.Value}");
-                //    }
-                //}
-                #endregion
             }
             sqlConnection.Close();
+
+            #region how to see key and value of dictionary
+            foreach (var item in datas)
+            {
+                Console.WriteLine("New Row:");
+                foreach (var property in (IDictionary<string, object>)item)
+                {
+                    Console.WriteLine($"  {property.Key}: {property.Value}");
+                }
+            }
+            #endregion
             return datas.ToList();
         }
 
