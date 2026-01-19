@@ -40,11 +40,13 @@ internal class Program
 
             var ackMessage = "<|ACK|>";
             var echoBytes = Encoding.UTF8.GetBytes(ackMessage);
-            await clientSocket.SendAsync(echoBytes, 0);
+            await clientSocket.SendAsync(echoBytes, SocketFlags.None);
             Console.Write(
                 $" - Received {Environment.NewLine}");
         }
 
+
+        Console.WriteLine("End of Process Client");
         //while (true)
         //{
         //    // Receive message.
@@ -75,6 +77,7 @@ internal class Program
     private static void SendingNoMessage(Socket clientSocket)
     {
         clientSocket.Close();
+        Console.WriteLine("Close Client Socket.....");
     }
 
     private static async Task ProcessClientAsync(Socket clientSocket)
