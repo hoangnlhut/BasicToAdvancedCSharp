@@ -13,9 +13,10 @@ namespace Part34_AsyncAwait.ThreadPoolSample
             for (int i = 1; i <= 100; i++)
             {
                 int capturedId = i;
-
+                //Thread.Sleep(2000);
                 ThreadPoolExample.QueueUserWorkItem(() =>
                 {
+                    Thread.Sleep(5000);
                     Console.WriteLine($"{capturedId} (thread #{Environment.CurrentManagedThreadId})");
                 });
             }
