@@ -1,4 +1,3 @@
-
 using Middleware.Boostrapping;
 
 namespace Middleware
@@ -34,7 +33,31 @@ namespace Middleware
 
             app.UseMiddlewareCustom();
 
+            //app.Map("/map1", HandleMap1);
+            //app.Map("/map2", HandleMap2);
+
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Hello from the non-Map delegate!");
+            });
+
             app.Run();
+        }
+
+        private static void HandleMap1(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Map 1");
+            });
+        }
+
+        private static void HandleMap2(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Map 2");
+            });
         }
     }
 }

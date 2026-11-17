@@ -79,4 +79,36 @@
             Console.WriteLine("Middleware55555: After next middleware");
         }
     }
+
+    public class Middleware6
+    {
+        private readonly RequestDelegate _next;
+        public Middleware6(RequestDelegate next)
+        {
+            _next = next;
+        }
+
+        public async Task InvokeAsync(HttpContext context)
+        {
+            Console.WriteLine("Middleware6666666: Before next middleware");
+            await _next(context);        
+            Console.WriteLine("Middleware6666666: After next middleware");
+        }
+    }
+
+    public class Middleware7
+    {
+        private readonly RequestDelegate _next;
+        public Middleware7(RequestDelegate next)
+        {
+            _next = next;
+        }
+
+        public async Task InvokeAsync(HttpContext context)
+        {
+            Console.WriteLine("Middleware7777777: Before next middleware");
+            await _next(context);
+            Console.WriteLine("Middleware7777777: After next middleware");
+        }
+    }
 }
